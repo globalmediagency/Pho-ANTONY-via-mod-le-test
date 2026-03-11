@@ -17,21 +17,21 @@ export default function Navbar() {
     <nav className="fixed w-full z-50 bg-white/90 backdrop-blur-md shadow-sm">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between h-20">
-          <div className="flex items-center">
-            <a href="#" className="flex-shrink-0 flex items-center gap-3">
+          <div className="flex items-center min-w-0 flex-1">
+            <a href="#" className="flex items-center gap-2 sm:gap-3 min-w-0">
               <img
-                className="h-12 w-auto object-contain"
+                className="h-10 sm:h-12 w-auto object-contain shrink-0"
                 src={restaurantData.logo}
                 alt={restaurantData.name}
                 referrerPolicy="no-referrer"
               />
-              <span className="font-serif text-2xl font-bold text-[#800020] uppercase tracking-wider">
+              <span className="font-serif text-lg sm:text-2xl font-bold text-[#800020] uppercase tracking-wider truncate">
                 {restaurantData.name}
               </span>
             </a>
           </div>
 
-          <div className="hidden md:flex items-center space-x-8">
+          <div className="hidden md:flex items-center space-x-8 shrink-0">
             {navLinks.map((link) => (
               <a
                 key={link.name}
@@ -51,7 +51,7 @@ export default function Navbar() {
             </a>
           </div>
 
-          <div className="flex items-center md:hidden">
+          <div className="flex items-center md:hidden shrink-0 ml-4">
             <button
               onClick={() => setIsOpen(!isOpen)}
               className="inline-flex items-center justify-center p-2 rounded-md text-gray-700 hover:text-[#800020] focus:outline-none"
